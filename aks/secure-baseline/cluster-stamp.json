@@ -424,7 +424,7 @@
                 "networkProfile": {
                     "networkPlugin": "azure",
                     "networkPolicy": "azure",
-                    "outboundType": "loadBalancer",
+                    "outboundType": "userDefinedRouting",
                     "loadBalancerSku": "standard",
                     "loadBalancerProfile": "[json('null')]",
                     "serviceCidr": "172.16.0.0/16",

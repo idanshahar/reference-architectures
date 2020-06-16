@@ -40,6 +40,6 @@ jobs:
         # Specify the script here
         inlineScript: |
           az group create --name ${{ env.RGNAMECLUSTER }} --location ${{ env.RGLOCATION }}
-          az deployment group create --resource-group ${{ env.RGNAMECLUSTER }} --template-file "cluster-stamp.json" --name "cluster-0001" --parameters location=${{ env.RGLOCATION }} geoRedundancyLocation=${{ env.REDUNDANCY_LOCATION }} targetVnetResourceId=${{ env.CLUSTER_VNET_RESOURCE_ID }} k8sRbacAadProfileTenantId=${{ env.k8sRbacAadProfileTenantId }} k8sRbacAadProfileAdminGroupObjectID=${{ env.k8sRbacAadProfileAdminGroupObjectID }} keyvaultAclAllowedSubnetResourceIds=${{ env.FIREWALL_SUBNET_RESOURCEID }}
+         az deployment group $([[ ${{ github.event_name }} = pull_request ]] && echo what-if --no-pretty-print || echo create) --resource-group ${{ env.RGNAMECLUSTER }} --template-file "cluster-stamp.json" --name "cluster-0001" --parameters location=${{ env.RGLOCATION }} geoRedundancyLocation=${{ env.REDUNDANCY_LOCATION }} targetVnetResourceId=${{ env.CLUSTER_VNET_RESOURCE_ID }} k8sRbacAadProfileTenantId=${{ env.k8sRbacAadProfileTenantId }} k8sRbacAadProfileAdminGroupObjectID=${{ env.k8sRbacAadProfileAdminGroupObjectID }} keyvaultAclAllowedSubnetResourceIds=${{ env.FIREWALL_SUBNET_RESOURCEID }}
         azcliversion: 2.6.0
         # Azure CLI version to be used to execute the script. If not provided, latest version is used

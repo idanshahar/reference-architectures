@@ -15,7 +15,7 @@ env:
   RGNAMECLUSTER: "{YOUR-CLUSTER-RG-NAME_TO_BE_CREATED}"
   RGLOCATION: "{REGION}"
   REDUNDANCY_LOCATION: "{REDUDANCY_REGION}"
-  CLUSTER_VNET_RESOURCE_ID: "/subscriptions/[subscriptionId]/resourceGroups/far4-rg-enterprise-networking-spokes/providers/Microsoft.Network/virtualNetworks/vnet-hub-spoke-BU0001A0008-00"
+  CLUSTER_VNET_RESOURCE_ID: "/subscriptions/[subscriptionId]/resourceGroups/rg-enterprise-networking-spokes/providers/Microsoft.Network/virtualNetworks/vnet-hub-spoke-BU0001A0008-00"
   k8sRbacAadProfileTenantId: "{GUID}"
   k8sRbacAadProfileAdminGroupObjectID: "{GUID}"
   FIREWALL_SUBNET_RESOURCEID: "[]"
